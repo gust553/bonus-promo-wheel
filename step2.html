@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saldo Liberado</title>
+
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','2494659430931878');
+fbq('init','1559203845392294');
+fbq('track','PageView');
+fbq('track','ViewContent');
+</script>
+
+<style>
+body{background:radial-gradient(circle at top,#0b0b0b,#000);
+color:#fff;font-family:Arial;
+display:flex;align-items:center;justify-content:center;
+min-height:100vh;padding:20px;text-align:center}
+.box{max-width:420px}
+.alert{background:linear-gradient(90deg,#ff0000,#ff6600);
+padding:12px;border-radius:10px;font-weight:bold;margin-bottom:14px}
+.balance{background:#050505;border:2px solid #00ff88;
+border-radius:18px;padding:20px;margin:18px 0;
+font-size:36px;color:#00ff88;font-weight:bold;
+box-shadow:0 0 30px rgba(0,255,136,.5)}
+.vagas{color:#ffcc00;font-size:14px;margin-bottom:16px}
+.btn{display:block;background:linear-gradient(90deg,#00ff88,#00cc66);
+color:#000;padding:22px;border-radius:18px;text-decoration:none;
+font-weight:bold;font-size:21px;animation:pulse 1s infinite}
+@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.08)}100%{transform:scale(1)}}
+.small{font-size:12px;color:#777;margin-top:16px}
+</style>
+</head>
+<body>
+<div class="box">
+<div class="alert">🚨 SAQUE IMEDIATO DISPONÍVEL</div>
+<p>Um valor foi liberado para ativação:</p>
+<div class="balance" id="saldo">R$ 1.186,40</div>
+<div class="vagas">Vagas restantes: <span id="vagas">5</span></div>
+<a class="btn" href="https://www.678aapg.vip/?id=750701767" onclick="fbq('track','Click')">
+DESBLOQUEAR AGORA
+</a>
+<div class="small">Se não ativar agora, o valor será perdido</div>
+</div>
+
+<script>
+let saldo = 1186.40;
+setInterval(()=>{
+ saldo += Math.random()*15;
+ document.getElementById('saldo').innerText =
+ "R$ " + saldo.toFixed(2).replace('.',',');
+},2200);
+
+let vagas = 5;
+setInterval(()=>{
+ if(vagas>1) vagas--;
+ document.getElementById('vagas').innerText = vagas;
+},6500);
+</script>
+</body>
+</html>
